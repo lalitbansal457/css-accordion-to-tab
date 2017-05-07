@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>css_tab_acc</title>
+        <style type="text/css">
+            .tab_container {
+                border-top: none;
+                clear: both;
+                float: left;
+                width: 100%;
+                background: #fff;
+                overflow: auto;
+            }
+            input {
+                position: absolute;
+                opacity: 0;
+                z-index: -1;
+            }
+            .tab_content {
+                max-height: 0;
+                overflow: hidden;
+                -webkit-transition: max-height .35s;
+                -o-transition: max-height .35s;
+                transition: max-height .35s;
+            }
+            .tab_content p,
+            .tab_content h2 {
+                margin: 20px;
+            }
+            label {
+                float: left;
+                padding: 15px 25px;
+                box-sizing: border-box;
+                width: 33.33%;
+                border-right: 1px solid #fff;
+                font-weight: 600;
+                text-align: center;
+                background-color: #ccc
+            }
+            label:hover {
+                color: #fff;
+                cursor: pointer;
+            }
+            input:checked + label {
+                background: #fff;
+                color: #ccc;
+            }
+
+            @media only screen and (min-width: 768px) {
+                .tab_heading {
+                    display: none;
+                }
+                #tab1:checked ~ .tab_container #acc1,
+                #tab2:checked ~ .tab_container #acc2,
+                #tab3:checked ~ .tab_container #acc3,
+                #tab4:checked ~ .tab_container #acc4 {
+                    max-height: 100%;
+                }
+                label:last-of-type {
+                    border: 0px none;
+                }
+            }
+            @media screen and (max-width: 767px) {
+                .hidden-xs {
+                    display: none;
+                }
+                .tab_heading {
+                    background-color: #ccc;
+                    color: #000;
+                    border-top: 1px solid #fff;
+                    margin: 0;
+                    padding: 10px 20px;
+                    cursor: pointer;
+                    -webkit-touch-callout: none;
+                    -webkit-user-select: none;
+                    -khtml-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
+                }
+                input:checked + .tab_content {
+                    max-height: 100%;
+                }
+                .tab_container label {
+                    display: inline-block;
+                    float: none;
+                    width: 100%;
+                    border-right: 0px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <input id="tab1" type="radio" name="tabs" checked="checked" class="hidden-xs">
+        <label for="tab1"  class="hidden-xs">Option 1</label>
+        <input id="tab2" type="radio" name="tabs"  class="hidden-xs">
+        <label for="tab2"  class="hidden-xs">Option 2</label>
+        <input id="tab3" type="radio" name="tabs"  class="hidden-xs">
+        <label for="tab3"  class="hidden-xs">Option 3</label>
+        <div class="tab_container">
+            <label for="tab11" class=" tab_heading">Option 1</label>
+            <input id="tab11" type="radio" checked name="tabs1">
+            <div id="acc1" class="tab_content">
+                <h2>Heading 1</h2>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+                <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
+            </div>
+            <!-- #tab1 -->
+            <label for="tab21" class=" tab_heading">Option 2</label>
+            <input id="tab21" type="radio" name="tabs1">
+            <div id="acc2" class="tab_content">
+                <h2>Heading 2</h2>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+                <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
+            </div>
+            <!-- #tab2 -->
+            <label for="tab31" class=" tab_heading">Option 3</label>
+            <input id="tab31" type="radio" name="tabs1"> 
+            <div id="acc3" class="tab_content">
+                <h2>Heading 3</h2>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+                <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
+            </div>
+            <!-- #tab3 -->
+        </div>
+    </body>
+</html>
